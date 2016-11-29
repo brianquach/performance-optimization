@@ -16,10 +16,14 @@ Optimize a website to gain at least a 90/100 for desktop and mobile on Google's 
 Grab code source:
 * Clone repository: `git clone https://github.com/brianquach/udacity-nano-front-optimization.git` or download the zip [here](https://github.com/brianquach/udacity-nano-front-optimization/archive/master.zip).
 * Navigate to the directory where you cloned the repo or unzipped the file to and open folder `dist`.
-* Use your favorite browser to open `index.html`
+* Use your favorite browser to open `index.html`.
 
 *Developers (optional)*:
-* Install [Gulp](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md)
+To run project's build process follow the following instructions:
+* Install [Gulp](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md).
+* Navigate to project's root folder.
+* Run `npm install` to let npm install required Gulp plugins.
+* Run `gulp optimize`.
 
 ## Optimization Steps
 * Asynchronously download non-critical javascript by adding `async` script attribute.
