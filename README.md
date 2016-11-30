@@ -30,6 +30,12 @@ To run project's build process follow the following instructions:
 * Move importing CSS and Google Fonts to bottom of HTML body.
 * Gulp task to compresses all images.
 * Gulp task to create thumbnail version of pizzeria.jpg for `index.html`.
+* Cache javascript document query variables to reduce javascript DOM lookup time.
+* Refactor javascript in `resizePizzas` function to avoid layout reflow as much as possible.
+* Refactor javascript in `updatePositions` function and `DOMContentLoaded` event trigger to avoid layout reflow.
+* Move inline styles into CSS classes.
+* Gulp task to create more efficient sizes of pizzeria.jpg for `views/pizza.html`.
+* Gulp task to minify JS and CSS.
 
 ## Creator
 **Brian Quach**
