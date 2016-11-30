@@ -25,10 +25,30 @@ gulp.task(PIZZA_THUMBNAIL_TASK, function () {
     }))
     .pipe(imagemin())
     .pipe(rename(function (path) {
-      path.basename += '-thumbnail'
+      path.basename += '-thumbnail';
     }))
     .pipe(gulp.dest('dist/views/images/'));
 });
 tasks.push(PIZZA_THUMBNAIL_TASK);
+
+var PIZZA_RESIZE_TASK = 'pizza_resize';
+var sizes = [360, 720];
+var taskName;
+sizes.forEach(function (size) {
+  taskName = PIZZA_THUMBNAIL_TASK + size;
+  gulp.task(taskName, function () {
+    gulp.src('src/images/pizzeria/pizzeria.jpg')
+      .pipe(imageResize({
+        width : size,
+        imageMagick: true
+      }))
+      .pipe(imagemin())
+      .pipe(rename(function (path) {
+        path.basename += '-' + size;
+      }))
+      .pipe(gulp.dest('dist/views/images/'));
+  });
+  tasks.push(taskName);
+});
 
 gulp.task('optimize', tasks);
