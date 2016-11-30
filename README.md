@@ -25,6 +25,8 @@ To run project's build process follow the following instructions:
 * Run `npm install` to let npm install required Gulp plugins.
 * Run `gulp optimize`.
 
+*Friendly reminder:* Changes to JS and CSS or image files should be done in the `src` folder because that's where Gulp expects project assets to be. 
+
 ## Optimization Steps
 * Asynchronously download non-critical javascript by adding `async` script attribute.
 * Move importing CSS and Google Fonts to bottom of HTML body.
