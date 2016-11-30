@@ -387,17 +387,17 @@ var pizzaElementGenerator = function(i) {
     pizzaName, // the pizza name itself
     ul; // the list of ingredients
 
-  pizzaContainer = document.createElement("div");
-  pizzaImageContainer = document.createElement("div");
-  pizzaImage = document.createElement("img");
-  pizzaDescriptionContainer = document.createElement("div");
+  pizzaContainer = document.createElement('div');
+  pizzaImageContainer = document.createElement('div');
+  pizzaImage = document.createElement('img');
+  pizzaDescriptionContainer = document.createElement('div');
 
-  pizzaContainer.classList.add("randomPizzaContainer");
-  pizzaContainer.id = "pizza" + i; // gives each pizza element a unique id
-  pizzaImageContainer.classList.add("randomPizzaContainerImgContainer");
+  pizzaContainer.classList.add('randomPizzaContainer');
+  pizzaContainer.id = 'pizza' + i; // gives each pizza element a unique id
+  pizzaImageContainer.classList.add('randomPizzaContainerImgContainer');
 
-  pizzaImage.src = "images/pizza.png";
-  pizzaImage.classList.add("img-responsive");
+  pizzaImage.src = 'images/pizza.png';
+  pizzaImage.classList.add('img-responsive');
   pizzaImageContainer.appendChild(pizzaImage);
   pizzaContainer.appendChild(pizzaImageContainer);
 
@@ -527,10 +527,11 @@ function updatePositions() {
   window.performance.mark('mark_start_frame');
   var docScrollTop = document.body.scrollTop;
   var items = document.querySelectorAll('.mover');
+  var t = (docScrollTop / 1250);
 
   function updateLeft() {
     for (var i = 0; i < items.length; i++) {
-      var phase = Math.sin((docScrollTop / 1250) + (i % 5));
+      var phase = Math.sin(t + (i % 5));
       items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
     }
   }
